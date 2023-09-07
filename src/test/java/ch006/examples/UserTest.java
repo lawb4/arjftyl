@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 public class UserTest {
 
     @Test
-    public void canConstructANewUser(){
+    public void canConstructANewUser() {
         User user = new User();
     }
 
@@ -26,7 +26,7 @@ public class UserTest {
 
     @Test
     public void canConstructWithUsernameAndPassword() {
-        User user = new User ("admin", "pA55w0rD");
+        User user = new User("admin", "pA55w0rD");
     }
 
     @Test
@@ -39,3 +39,4 @@ public class UserTest {
                 user.getPassword());
     }
 }
+
