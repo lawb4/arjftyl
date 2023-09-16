@@ -2,10 +2,9 @@ package ch010collections.exercises;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
+
+import domainentities.User;
 
 import static org.junit.Assert.*;
 
@@ -68,5 +67,91 @@ public class MainTest {
         //clear the first collection
         usersCollection1.clear();
         assertTrue("userCollection1 is empty", usersCollection1.isEmpty());
+    }
+
+    @Test
+    public void createAndManipulateListOfUsers() {
+        //Create the List
+        List<User> usersList = new ArrayList<>();
+
+        assertEquals("userList is created",
+                0, usersList.size());
+
+        //Create two User objects
+        User user1 = new User("user1", "pass1");
+        User user2 = new User("user2", "pass2");
+
+        assertEquals("user1", user1.getUsername());
+        assertEquals("pass2", user2.getPassword());
+
+        //Add a User to the list
+        usersList.add(user1);
+
+        assertFalse("usersList is not empty",
+                usersList.isEmpty());
+
+        //Add a User to the front of the list
+        usersList.add(0, user2);
+
+        assertEquals("size of usersList is 2",
+                2, usersList.size());
+
+        //Assert on the indexOf positions of the User objects
+        assertEquals("user2 is at index 0",
+                0, usersList.indexOf(user2));
+        assertEquals("user1 is at index 1",
+                1, usersList.indexOf(user1));
+
+        //Remove the first User object
+        usersList.remove(user2);
+
+        assertEquals("user1 is at index 0",
+                0, usersList.indexOf(user1));
+    }
+
+    @Test
+    public void createAndManipulateSetOfUsers() {
+        //Create a User
+        User user1 = new User("user1", "pass1");
+
+        assertEquals("user1", user1.getUsername());
+
+        //Add the User to the Set
+        Set userSet = new HashSet();
+        userSet.add(user1);
+
+        assertFalse(userSet.isEmpty());
+        assertEquals(1, userSet.size());
+
+        //Add the User to the Set again
+        userSet.add(user1);
+
+        assertEquals(1, userSet.size());
+
+        //Check that the User has only been added to the Set once
+        assertEquals(1, userSet.size());
+        assertTrue(userSet.contains(user1));
+    }
+
+    @Test
+    public void createAndManipulateMapOfObjects() {
+        //Create a Map of User objects
+        Map<String, User> mapUsers = new HashMap<>();
+        assertTrue(mapUsers.isEmpty());
+
+        //Create two Users objects
+        User user1 = new User("user1", "pass1");
+        User user2 = new User("user1", "pass1");
+
+        assertEquals("user1", user1.getUsername());
+        assertEquals("user2", user2.getUsername());
+
+        //Add both User objects to the map using the same key
+        mapUsers.put("uid001", user1);
+        mapUsers.put("uid001", user2);
+
+        //Check that only one User object has been added
+        assertEquals(1, mapUsers.size());
+        assertTrue(mapUsers.containsValue(user2));
     }
 }
