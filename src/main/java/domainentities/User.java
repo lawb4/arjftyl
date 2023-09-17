@@ -27,4 +27,8 @@ public class User {
         }
         this.password = password;
     }
+
+    public String getPermission() {
+        return "Normal";
+    }
 }
