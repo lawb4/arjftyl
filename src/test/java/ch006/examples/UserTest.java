@@ -1,5 +1,6 @@
 package ch006.examples;
 
+import domainentities.InvalidPassword;
 import domainentities.User;
 import org.junit.Test;
 
@@ -30,7 +31,7 @@ public class UserTest {
     }
 
     @Test
-    public void canSetPasswordAfterConstructed() {
+    public void canSetPasswordAfterConstructed() throws InvalidPassword {
         User user = new User();
         user.setPassword("PaZZwor6");
 
