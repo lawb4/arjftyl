@@ -1,4 +1,4 @@
-package ch004.exercises;
+package ch004testswithotherclasses.exercises;
 
 import org.junit.Test;
 

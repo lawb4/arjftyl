@@ -1,4 +1,4 @@
-package ch003.examples;
+package ch003myfirsttest.examples;
 
 import org.junit.Test;
 
