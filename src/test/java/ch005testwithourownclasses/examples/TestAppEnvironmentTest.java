@@ -1,4 +1,4 @@
-package ch005.examples;
+package ch005testwithourownclasses.examples;
 
 import domainobject.TestAppEnv;
 import org.junit.Test;

@@ -1,12 +1,9 @@
-package ch005.exercises;
+package ch005testwithourownclasses.exercises;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import static domainobject.TestAppEnv.*; // import everything from TestAppEnv
-// The below imports are redundant because `TestAppEnv.*` imports everything
-// import static domainobject.TestAppEnv.DOMAIN;
-// import static domainobject.TestAppEnv.PORT;
+import static domainobject.TestAppEnv.*;
 
 public class TestAppEnvironmentStaticImportTest {
     @Test
