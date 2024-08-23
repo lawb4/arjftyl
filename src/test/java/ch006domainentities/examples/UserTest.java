@@ -1,4 +1,4 @@
-package ch006.examples;
+package ch006domainentities.examples;
 
 import domainentities.InvalidPassword;
 import domainentities.User;
@@ -28,6 +28,14 @@ public class UserTest {
     @Test
     public void canConstructWithUsernameAndPassword() {
         User user = new User("admin", "pA55w0rD");
+
+        assertEquals("given username expected",
+                "admin",
+                user.getUsername());
+
+        assertEquals("given password expected",
+                "pA55w0rD",
+                user.getPassword());
     }
 
     @Test
